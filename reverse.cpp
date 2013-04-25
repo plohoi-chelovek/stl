@@ -13,6 +13,11 @@ int main(int argc, char** argv) {
   vector<char> str1 = make< vector<char> >("Hello world");
   reverse(str1.begin(), str1.end());
   assert(make< vector<char> >("dlrow olleH") == str1);
+
+  vector<char> str2 = make < vector<char> >("Family gay");
+  vector<char>::iterator where = find<vector<char>::iterator, char>(str2.begin(), str2.end(),
+				      'g');
+  assert(*where == 'g');
 }
 
 template <typename Container>
