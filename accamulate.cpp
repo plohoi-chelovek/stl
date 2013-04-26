@@ -12,6 +12,10 @@ using namespace std;
 template <typename Container, typename T>
 Container make(const T t[], int count);
 
+void bar() {}
+
+void foo(&bar a);
+
 int main(int argc, char** argv) {
   int numbers_array[] = { 1, 2, 3, 4, 5 };
   vector<int> numbers_vector = make< vector<int>, int >(numbers_array, 5);
@@ -23,6 +27,4 @@ template <typename Container, typename T>
 Container make(const T t[], int count) {
   return Container(&t[0], &t[count]);
 }
-
-
 
